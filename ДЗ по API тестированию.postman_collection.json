@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "5a620b8f-70d1-482f-9f74-75dd63ae16c1",
+		"name": "ДЗ по API тестированию",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25522081"
+	},
+	"item": [
+		{
+			"name": "Выполнить запрос на получение списка всех файлов и папок",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "OAuth y0_AgAAAAAzXqlxAADLWwAAAADayrSn6cS6ihsDRWey5qfrOiTuUuPzIGs"
+					}
+				],
+				"url": {
+					"raw": "https://cloud-api.yandex.net/v1/disk/resources?path=%2F",
+					"protocol": "https",
+					"host": [
+						"cloud-api",
+						"yandex",
+						"net"
+					],
+					"path": [
+						"v1",
+						"disk",
+						"resources"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "%2F"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " Выполнить запрос на создание папки ",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "OAuth y0_AgAAAAAzXqlxAADLWwAAAADayrSn6cS6ihsDRWey5qfrOiTuUuPzIGs"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://cloud-api.yandex.net/v1/disk/resources?path=%2Fmonkey",
+					"protocol": "https",
+					"host": [
+						"cloud-api",
+						"yandex",
+						"net"
+					],
+					"path": [
+						"v1",
+						"disk",
+						"resources"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "%2Fmonkey"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Выполнить запрос на копирование папки",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "OAuth y0_AgAAAAAzXqlxAADLWwAAAADayrSn6cS6ihsDRWey5qfrOiTuUuPzIGs"
+					}
+				],
+				"url": {
+					"raw": "https://cloud-api.yandex.net/v1/disk/resources/copy?from=%2Fmonkey&path=%2Fmonkey2",
+					"protocol": "https",
+					"host": [
+						"cloud-api",
+						"yandex",
+						"net"
+					],
+					"path": [
+						"v1",
+						"disk",
+						"resources",
+						"copy"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "%2Fmonkey"
+						},
+						{
+							"key": "path",
+							"value": "%2Fmonkey2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удалите созданную в пункте 2 папку.",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "OAuth y0_AgAAAAAzXqlxAADLWwAAAADayrSn6cS6ihsDRWey5qfrOiTuUuPzIGs"
+					}
+				],
+				"url": {
+					"raw": "https://cloud-api.yandex.net/v1/disk/resources?path=%2Fmonkey",
+					"protocol": "https",
+					"host": [
+						"cloud-api",
+						"yandex",
+						"net"
+					],
+					"path": [
+						"v1",
+						"disk",
+						"resources"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "%2Fmonkey"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание существующей папки",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "OAuth y0_AgAAAAAzXqlxAADLWwAAAADayrSn6cS6ihsDRWey5qfrOiTuUuPzIGs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cloud-api.yandex.net/v1/disk/resources?path=%2Fmonkey",
+					"protocol": "https",
+					"host": [
+						"cloud-api",
+						"yandex",
+						"net"
+					],
+					"path": [
+						"v1",
+						"disk",
+						"resources"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "%2Fmonkey"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Запрос на копирование не существующей папки",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "OAuth y0_AgAAAAAzXqlxAADLWwAAAADayrSn6cS6ihsDRWey5qfrOiTuUuPzIGs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cloud-api.yandex.net/v1/disk/resources/copy?from=%2Fcoffee&path=%2Fsea",
+					"protocol": "https",
+					"host": [
+						"cloud-api",
+						"yandex",
+						"net"
+					],
+					"path": [
+						"v1",
+						"disk",
+						"resources",
+						"copy"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "%2Fcoffee"
+						},
+						{
+							"key": "path",
+							"value": "%2Fsea"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить несуществующую папку",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Загрузка файла в диск без указанного пути",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "OAuth y0_AgAAAAAzXqlxAADLWwAAAADayrSn6cS6ihsDRWey5qfrOiTuUuPzIGs"
+					}
+				],
+				"url": {
+					"raw": "https://cloud-api.yandex.net/v1/disk/resources/upload?path=%2F&url=https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D3371c45886ba7b9626277725061c98c9_l-5644585-images-thumbs%26n%3D27%26h%3D384%26w%3D480",
+					"protocol": "https",
+					"host": [
+						"cloud-api",
+						"yandex",
+						"net"
+					],
+					"path": [
+						"v1",
+						"disk",
+						"resources",
+						"upload"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "%2F"
+						},
+						{
+							"key": "url",
+							"value": "https%3A%2F%2Favatars.mds.yandex.net%2Fi%3Fid%3D3371c45886ba7b9626277725061c98c9_l-5644585-images-thumbs%26n%3D27%26h%3D384%26w%3D480"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
